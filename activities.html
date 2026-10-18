@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities | Q-Lab, Government College of Engineering, Erode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== SHARED HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Q-Lab — go to home">
+        <!-- Q-Lab logo — replaceable asset. See README Section J for details. -->
+        <img src="assets/images/qlab-logo.png" alt="Q-Lab logo" class="brand-mark">
+        <div class="brand-text">Q-Lab<span>Government College of Engineering, Erode</span></div>
+      </a>
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="members.html" class="nav-link">Our Members</a></li>
+          <li><a href="activities.html" class="nav-link" aria-current="page">Activities</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== ACTIVITIES ===== -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Activities</h1>
+
+        <div class="tabs" role="tablist" aria-label="Q-Lab activities">
+          <button
+            role="tab"
+            id="tab-events"
+            aria-selected="true"
+            aria-controls="panel-events"
+            tabindex="0"
+          >
+            Events
+          </button>
+          <button
+            role="tab"
+            id="tab-projects"
+            aria-selected="false"
+            aria-controls="panel-projects"
+            tabindex="-1"
+          >
+            Projects
+          </button>
+        </div>
+
+        <!-- Events panel -->
+        <div
+          id="panel-events"
+          role="tabpanel"
+          aria-labelledby="tab-events"
+          tabindex="0"
+        >
+          <h2>Events</h2>
+          <div class="card-grid" id="upcoming-list"></div>
+          <div class="card-grid" id="past-list"></div>
+        </div>
+
+        <!-- Projects panel -->
+        <div
+          id="panel-projects"
+          role="tabpanel"
+          aria-labelledby="tab-projects"
+          tabindex="0"
+          class="hidden"
+        >
+          <h2>Projects</h2>
+          <div class="card-grid" id="projects-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/images/qlab-logo.png" alt="Government College of Engineering, Erode logo" class="footer-logo">
+      <div class="footer-info">
+        <div class="footer-college">Government College of Engineering, Erode</div>
+        <div class="footer-copyright">&copy; 2026 Q-Lab, Government College of Engineering, Erode. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/events.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/activities.js"></script>
+</body>
+</html>
