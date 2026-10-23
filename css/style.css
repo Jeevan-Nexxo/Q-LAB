@@ -125,9 +125,9 @@ body::before {
   transform: translate(-50%, -50%);
   width: var(--watermark-width);
   max-width: min(700px, 90vw);
-  height: auto;
+  aspect-ratio: 1 / 1;
   max-height: min(700px, 85vh);
-  background-image: url("assets/images/qlab-logo.png");
+  background-image: url("../assets/images/qlab-logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -136,6 +136,15 @@ body::before {
   z-index: 0;
   /* Prevent horizontal overflow */
   overflow: clip;
+}
+
+/* Keep page content above the fixed watermark layer. The header already has
+   its own stacking context and remains sticky at z-index 50. */
+.banner,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ---------- Utility ---------- */
@@ -739,6 +748,18 @@ h1, h2, h3 {
 }
 
 /* ---------- Event cards ---------- */
+#panel-events > h2,
+#panel-projects > h2 {
+  margin-bottom: 1.25rem;
+}
+
+.events-group-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
 .event-card .card-image {
   aspect-ratio: 16 / 9;
 }

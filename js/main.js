@@ -14,19 +14,6 @@
 
   /* ---------- Helpers ---------- */
 
-  function escapeHtml(text) {
-    if (text == null) return "";
-    return String(text).replace(/[&<>"']/g, function (c) {
-      return {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;",
-      }[c];
-    });
-  }
-
   function initials(name) {
     return String(name)
       .split(/\s+/)
@@ -121,7 +108,7 @@
 
     var img = document.createElement("img");
     img.src = member.image;
-    img.alt = "Profile photograph of " + escapeHtml(member.name);
+    img.alt = "Profile photograph of " + member.name;
     img.addEventListener("error", function () {
       img.style.display = "none";
       var fallback = document.createElement("span");
@@ -133,22 +120,22 @@
     imageDiv.appendChild(img);
 
     var name = document.createElement("h3");
-    name.textContent = escapeHtml(member.name);
+    name.textContent = member.name;
 
     var role = document.createElement("p");
     role.className = "card-role";
-    role.textContent = escapeHtml(member.role);
+    role.textContent = member.role;
 
     var department = document.createElement("p");
     department.className = "card-department";
     department.textContent =
-      escapeHtml(member.department) +
-      (member.year ? " · " + escapeHtml(member.year) : "") +
-      (member.designation ? " · " + escapeHtml(member.designation) : "");
+      member.department +
+      (member.year ? " · " + member.year : "") +
+      (member.designation ? " · " + member.designation : "");
 
     var contribution = document.createElement("p");
     contribution.className = "card-contribution";
-    contribution.textContent = escapeHtml(member.contribution);
+    contribution.textContent = member.contribution;
 
     article.appendChild(imageDiv);
     article.appendChild(name);
